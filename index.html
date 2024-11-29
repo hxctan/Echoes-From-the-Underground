@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Echoes From the Underground</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Echoes From the Underground</h1>
+
+  <!-- Audio Player -->
+  <audio id="audio-player" controls>
+    <source id="audio-source" src="" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="album-container">
+    <!-- Album 1 -->
+    <div class="album">
+      <img src="Dead Man in Reno.jpg" alt="Album Cover" />
+      <h2>Dead Man In Reno</h2>
+      <p>Artist: Dead Man in Reno</p>
+      <p>Year: 2006</p>
+      <p>Genre: Metalcore</p>
+      <ol>
+        <li data-file="01-To Attain Everything.mp3">To Attain Everything</li>
+        <li data-file="02-From Here I Can See The Shore.mp3">From Here I Can See The Shore</li>
+        <li data-file="03-She's Tugging On My Heartstrings.mp3">She's Tugging On My Heartstrings</li>
+        <li data-file="04-Given A Season Of Sun.mp3">Given A Season Of Sun</li>
+        <li data-file="05-Goodbye Tomorrow, Hello Dead Letter.mp3">Goodbye Tomorrow, Hello Dead Letter</li>
+        <li data-file="06-The Devil Made Him Do It.mp3">The Devil Made Him Do It</li>
+        <li data-file="07-He Said She Said.mp3">He Said She Said</li>
+        <li data-file="08-Cursed.mp3">Cursed</li>
+        <li data-file="09-Even In My Dreams.mp3">Even In My Dreams</li>
+        <li data-file="10-Love Stained Razorblades.mp3">Love Stained Razorblades</li>
+
+      </ol>
+    </div>
+
+    <!-- Album 2 -->
+    <div class="album">
+      <img src="Burn Your Wishes & The Awards EP 2.jpg" alt="Album Cover" />
+      <h2>Burn Your Wishes & The Awards - EP</h2>
+      <p>Artist: Burn Your Wishes</p>
+      <p>Year: 2003</p>
+      <p>Genre: Emo/Post-Hardcore</p>
+      <ol>
+        <li data-file="01-Burn Your Wishes.mp3">Burn Your Wishes</li>
+        <li data-file="02-Yesterday Could Last an Eternity.mp3">Yesterday Could Last an Eternity</li>
+        <li data-file="03-Fall Away.mp3">Fall Away</li>
+        <li data-file="04-Forever and A Day.mp3">Forever and A Day</li>
+        <li data-file="05-Never Look Bad.mp3">Never Look Bad</li>
+        <li data-file="06-So Good.mp3">So Good</li>
+        <li data-file="07-Midnight.mp3">Midnight</li>
+        <li data-file="08-Here.mp3">Here</li>
+        <li data-file="09-Take My Hand.mp3">Take My Hand</li>
+      </ol>
+    </div>
+
+    <!-- Album 3 -->
+    <div class="album">
+      <img src="Year One.jpeg" alt="Album Cover" />
+      <h2>Year One - EP</h2>
+      <p>Artist: Year One</p>
+      <p>Year: 2008</p>
+      <p>Genre: Emo/Post-Hardcore</p>
+      <ol>
+        <li data-file="01-Sinking.mp3">Sinking</li>
+        <li data-file="02-Deliverance.mp3">Deliverance</li>
+        <li data-file="03-Motions.mp3">Motions</li>
+        <li data-file="04-Holding On.mp3">Holding On</li>
+      </ol>
+    </div>
+
+    <!-- Album 4 -->
+    <div class="album">
+      <img src="When Love Met Destruction.jpg" alt="Album Cover" />
+      <h2>Catharsis - EP</h2>
+      <p>Artist: Motionless in White</p>
+      <p>Year: 2008</p>
+      <p>Genre: Metalcore</p>
+      <ol>
+        <li data-file="01-When Love Met Destruction.mp3">When Love Met Destruction</li>
+        <li data-file="02-To Keep From Getting Burned.mp3">To Keep From Getting Burned</li>
+        <li data-file="03-Ghost In The Mirror.mp3">Ghost In The Mirror</li>
+        <li data-file="04-Destroying Everything.mp3">Destroying Everything</li>
+        <li data-file="05-Whatever You Do ...Don't Press The Red Button.mp3">Whatever You Do ...Don't Press The Red Button</li>
+        <li data-file="06-She Never Made It To The Emergency Room.mp3">She Never Made It To The Emergency Room</li>
+        <li data-file="07-Billy In 4-C Never Saw It Coming.mp3">Billy In 4-C Never Saw It Coming</li>
+        <li data-file="08-We Only Come Out At Night.mp3">We Only Come Out At Night</li>
+        <li data-file="09-Bananamontana.mp3">Bananamontana</li>
+        <li data-file="10-The Seventh Circle.mp3">The Seventh Circle</li>
+        <li data-file="11-Apocolips.mp3">Apocolips</li>
+      </ol>
+    </div>
+  </div>
+
+
+  <script>
+    const audioPlayer = document.getElementById('audio-player');
+    const tracks = document.querySelectorAll('ol li');
+    let currentTrackIndex = 0;
+
+    function playTrack(index) {
+      audioPlayer.src = tracks[index].getAttribute('data-file');
+      audioPlayer.play();
+    }
+
+    tracks.forEach((track, index) => {
+      track.addEventListener('click', () => {
+        currentTrackIndex = index;
+        playTrack(index);
+      });
+    });
+
+    audioPlayer.addEventListener('ended', () => {
+      currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
+      playTrack(currentTrackIndex);
+    });
+
+    playTrack(currentTrackIndex);  // Start with the first track
+  </script>
+</body>
+</html>
+
+
+
