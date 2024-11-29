@@ -1,44 +1,44 @@
-/* General Reset */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
   
-  /* Body */
+
   body {
     font-family: Arial, sans-serif;
-    background-color: #111; /* Dark background to match the metalcore theme */
+    background-color: #111;
     color: #f4f4f4;
     text-align: center;
     padding: 0 20px;
   }
   
-  /* Header */
+
   h1 {
     font-family: 'MetalcoreFont', serif;
     font-size: 48px;
     text-transform: uppercase;
     color: #fff;
     letter-spacing: 3px;
-    text-shadow: 5px 5px #000, -5px -5px #000; /* Stronger shadow effect */
+    text-shadow: 5px 5px #000, -5px -5px #000; 
     background: linear-gradient(90deg, #222, #444);
     padding: 10px;
     border: 3px solid #333;
     display: inline-block;
   }
   
-  /* Audio Player */
+  
   audio {
     margin: 20px auto;
     display: block;
     width: 80%;
-    background: #222; /* Darken the audio player */
+    background: #222; 
     border: 2px solid #444;
     border-radius: 10px;
   }
   
-  /* Album Container */
+
   .album-container {
     display: flex;
     flex-wrap: wrap;
@@ -47,31 +47,31 @@
     padding: 20px;
   }
   
-  /* Individual Album */
+  
   .album {
-    background-color: #222; /* Dark background for albums */
-    border: 2px solid #444; /* Darker borders for a more cohesive look */
+    background-color: #222; 
+    border: 2px solid #444; 
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Darker shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     padding: 15px;
-    width: 280px; /* Adjust width for a better fit */
+    width: 280px; 
     text-align: center;
     color: #f4f4f4;
-    transition: transform 0.2s ease-in-out; /* Add subtle hover effect */
+    transition: transform 0.2s ease-in-out; 
   }
   
   .album:hover {
-    transform: scale(1.05); /* Slight zoom effect on hover */
+    transform: scale(1.05); 
   }
   
   .album img {
-    width: 100%; /* Ensure images fit inside the album box */
+    width: 100%;
     max-width: 220px;
     border-radius: 10px;
     margin-bottom: 10px;
   }
   
-  /* Album Title */
+ 
   .album h2 {
     font-size: 18px;
     margin-bottom: 5px;
@@ -79,14 +79,14 @@
     text-transform: uppercase;
   }
   
-  /* Album Information */
+ 
   .album p {
     font-size: 14px;
     margin-bottom: 5px;
-    color: #aaa; /* Lighter color for the artist/year/genre */
+    color: #aaa; 
   }
   
-  /* Tracklist */
+
   .album ol {
     list-style-type: decimal;
     padding-left: 20px;
@@ -99,15 +99,15 @@
     cursor: pointer;
     padding: 5px;
     border-radius: 5px;
-    transition: background-color 0.3s ease; /* Smooth hover effect */
+    transition: background-color 0.3s ease; 
   }
   
   .album ol li:hover {
-    background-color: #444; /* Darker background on hover */
-    color: #fff; /* Lighter text when hovered */
+    background-color: #444; 
+    color: #fff; 
   }
   
-  /* Responsive Design */
+  
   @media (max-width: 768px) {
     .album-container {
       flex-direction: column;
@@ -118,9 +118,9 @@
     }
   }
   
-  /* Font Import */
+
   @font-face {
     font-family: 'MetalcoreFont';
-    src: url('Shredded.ttf') format('truetype'); /* Make sure the path to the font is correct */
+    src: url('Shredded.ttf') format('truetype'); 
   }
   
