@@ -23,6 +23,8 @@
       <p>Artist: Dead Man in Reno</p>
       <p>Year: 2006</p>
       <p>Genre: Metalcore</p>
+      <img class="band-image" src="Dead Man In Reno band pic.jpg" alt="Band Image" width="200" />
+
       <ol>
         <li data-file="01-To Attain Everything.mp3">To Attain Everything</li>
         <li data-file="02-From Here I Can See The Shore.mp3">From Here I Can See The Shore</li>
@@ -45,6 +47,7 @@
       <p>Artist: Burn Your Wishes</p>
       <p>Year: 2003</p>
       <p>Genre: Emo/Post-Hardcore</p>
+      <img class="band-image" src="Burn Your Wishes band pic.png" alt="Band Image" width="200" />
       <ol>
         <li data-file="01-Burn Your Wishes.mp3">Burn Your Wishes</li>
         <li data-file="02-Yesterday Could Last an Eternity.mp3">Yesterday Could Last an Eternity</li>
@@ -65,6 +68,7 @@
       <p>Artist: Year One</p>
       <p>Year: 2008</p>
       <p>Genre: Emo/Post-Hardcore</p>
+      <img class="band-image" src="Year One band pic.png" alt="Band Image" width="200" />
       <ol>
         <li data-file="01-Sinking.mp3">Sinking</li>
         <li data-file="02-Deliverance.mp3">Deliverance</li>
@@ -80,6 +84,7 @@
       <p>Artist: Motionless in White</p>
       <p>Year: 2008</p>
       <p>Genre: Metalcore</p>
+      <img class="band-image" src="MIW Old Band pic.jpg" alt="Band Image" width="200" />
       <ol>
         <li data-file="01-When Love Met Destruction.mp3">When Love Met Destruction</li>
         <li data-file="02-To Keep From Getting Burned.mp3">To Keep From Getting Burned</li>
@@ -120,9 +125,24 @@
     });
 
     playTrack(currentTrackIndex);  // Start with the first track
+
+    // Select the album and band image
+document.querySelectorAll('.album').forEach(album => {
+  const bandImage = album.querySelector('.band-image');
+  
+  // Show the band image when hovering over the album
+  album.addEventListener('mouseenter', () => {
+    bandImage.style.display = 'block';
+  });
+
+  // Hide the band image when not hovering
+  album.addEventListener('mouseleave', () => {
+    bandImage.style.display = 'none';
+  });
+});
+
   </script>
 </body>
 </html>
-
 
 
